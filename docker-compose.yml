@@ -1,0 +1,44 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: retail_ai
+      POSTGRES_USER: retail
+      POSTGRES_PASSWORD: change_me
+    ports: ["5432:5432"]
+    volumes: [postgres_data:/var/lib/postgresql/data]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U retail -d retail_ai"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  redis:
+    image: redis:7-alpine
+    ports: ["6379:6379"]
+
+  backend:
+    build: ./backend
+    environment:
+      DB_URL: jdbc:postgresql://postgres:5432/retail_ai
+      DB_USER: retail
+      DB_PASSWORD: change_me
+      ML_SERVICE_URL: http://ml-service:8000
+    ports: ["8080:8080"]
+    depends_on:
+      postgres:
+        condition: service_healthy
+      ml-service:
+        condition: service_started
+
+  ml-service:
+    build: ./ml-service
+    ports: ["8000:8000"]
+
+  frontend:
+    build: ./frontend
+    ports: ["5173:80"]
+    depends_on: [backend]
+
+volumes:
+  postgres_data:
