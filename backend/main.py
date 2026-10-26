@@ -73,6 +73,10 @@ def serve_ui():
 def serve_style():
     return FileResponse(os.path.join(frontend_path, "style.css"), media_type="text/css")
 
+@app.get("/rs-ai-logo.png")
+def serve_logo():
+    return FileResponse(os.path.join(frontend_path, "public", "rs-ai-logo.png"), media_type="image/png")
+
 @app.get("/app.js")
 def serve_app_js():
     return FileResponse(os.path.join(frontend_path, "app.js"), media_type="application/javascript")

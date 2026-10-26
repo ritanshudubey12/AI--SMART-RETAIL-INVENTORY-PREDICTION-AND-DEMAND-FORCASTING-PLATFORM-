@@ -467,11 +467,9 @@ export default function App() {
       <aside className={`flex w-64 flex-col border-r transition-colors duration-200 ${t.bgSidebar} backdrop-blur-md`}>
         {/* Brand */}
         <div className={`flex items-center gap-3 border-b px-5 py-4 ${t.border}`}>
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-b from-slate-100 via-slate-300 to-slate-400 text-slate-950 shadow-lg shadow-white/10 border border-white/60">
-            <TrendingUp className="h-6 w-6 stroke-[2.5]" />
-          </div>
+          <img src="/rs-ai-logo.png" alt="RS AI logo" className="h-10 w-10 object-contain" />
           <div>
-            <h1 className="text-base font-extrabold tracking-tight metallic-sheen">OmniStock AI</h1>
+            <h1 className="text-base font-extrabold tracking-tight metallic-sheen">RS AI</h1>
             <p className="text-xs font-semibold bg-gradient-to-r from-amber-300 via-sky-300 to-slate-300 bg-clip-text text-transparent">India Retail AI Suite (₹)</p>
           </div>
         </div>
@@ -1515,7 +1513,7 @@ export default function App() {
                   <Bot className="h-5 w-5" />
                 </div>
                 <div>
-                  <h3 className={`text-sm font-bold ${t.title}`}>OmniStock AI Copilot Assistant</h3>
+                  <h3 className={`text-sm font-bold ${t.title}`}>RS AI Copilot Assistant</h3>
                   <p className={`text-[11px] ${t.subText}`}>Natural language inventory queries & automated decision support</p>
                 </div>
               </div>

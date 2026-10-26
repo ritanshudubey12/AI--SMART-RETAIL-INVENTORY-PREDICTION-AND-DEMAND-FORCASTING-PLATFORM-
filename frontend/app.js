@@ -1,5 +1,5 @@
 /**
- * OmniStock AI (India Retail Edition) - Core Application Logic
+ * RS AI (India Retail Edition) - Core Application Logic
  * Vanilla JavaScript implementation for high performance, zero build steps, and easy explanation.
  */
 

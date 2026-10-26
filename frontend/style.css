@@ -1,5 +1,5 @@
 /* ==========================================================================
-   OmniStock AI (India Retail Edition) - Core Design System & Vanilla Styles
+   RS AI (India Retail Edition) - Core Design System & Vanilla Styles
    Theme: Metallic Executive Dark & Crisp Light Mode with Glassmorphism
    ========================================================================== */
 
@@ -1016,3 +1016,9 @@ input[type="range"] {
 }
 
 
+
+.brand-logo {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
