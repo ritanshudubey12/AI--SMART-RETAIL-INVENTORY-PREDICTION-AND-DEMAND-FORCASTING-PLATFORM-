@@ -55,7 +55,7 @@ frontend_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "f
 @app.get("/")
 def root():
     # If visited from browser, serve the pure HTML/CSS/JS web UI
-    index_file = os.path.join(frontend_path, "index.html")
+    index_file = os.path.join(frontend_path, "vanilla.html")
     if os.path.exists(index_file):
         return FileResponse(index_file)
     return {
@@ -67,7 +67,7 @@ def root():
 
 @app.get("/ui")
 def serve_ui():
-    return FileResponse(os.path.join(frontend_path, "index.html"))
+    return FileResponse(os.path.join(frontend_path, "vanilla.html"))
 
 @app.get("/style.css")
 def serve_style():
